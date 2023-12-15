@@ -1,7 +1,7 @@
 Spaceship ben = new Spaceship();
 Star[] ken= new Star[300];
 ArrayList<Asteroid> aen = new ArrayList <Asteroid>();
-
+int count = 0;
 public void setup() 
 {
  size(500,500);
@@ -10,6 +10,7 @@ public void setup()
  }
  for(int i=0;i<30;i++){
    aen.add(new Asteroid());
+ }
 }
 public void draw() 
 {
@@ -22,7 +23,7 @@ public void draw()
    for (int i = 0; i<aen.size(); i++) {
     aen.get(i).show();
     aen.get(i).move();
-    double distance = dist((float)sen.getCenterX(), (float)sen.getCenterY(), (float)aen.get(i).getCenterX(), (float)aen.get(i).getCenterY());
+    double distance = dist((float)ben.getCenterX(), (float)ben.getCenterY(), (float)aen.get(i).getCenterX(), (float)aen.get(i).getCenterY());
     if (distance <= 20) {
       aen.remove(i);
       count+=10;
