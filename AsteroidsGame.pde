@@ -1,7 +1,6 @@
 Spaceship ben = new Spaceship();
 Star[] ken= new Star[300];
 ArrayList<Asteroid> aen = new ArrayList <Asteroid>();
-ArrayList<Bullet> tren=new ArrayList <Bullet>();
 
 public void setup() 
 {
@@ -29,16 +28,6 @@ public void draw()
       count+=10;
     }
    }
-   for(int i=0;i<tren.size();i++){
-     tren.get(i).show();
-     tren.get(i).move();
-    double d = dist((float)tren.get(i).getCenterX(),  (float)tren.get(i).getCenterX(), (float)aen.get(i).getCenterX(), (float)aen.get(i).getCenterY());
-    if (d <=20){
-     aen.remove(i); 
-     count+=10;
-     tren.remove(i);
-    }
-   }    
 }
 public void keyPressed(){
   if (key=='w')
