@@ -1,7 +1,8 @@
-Spaceship gren = new Spaceship();
+Spaceship ben = new Spaceship();
 Star[] ken= new Star[300];
 ArrayList<Asteroid> aen = new ArrayList <Asteroid>();
-ArrayList<Bullet> ben=new ArrayList <Bullet>();
+ArrayList<Bullet> gren=new ArrayList <Bullet>();
+
 int count = 0;
 public void setup() 
 {
@@ -16,8 +17,8 @@ public void setup()
 public void draw() 
 {
    background(0);
-   gren.move();
-   gren.show();
+   ben.move();
+   ben.show();
    for(int i=0;i<ken.length;i++){
      ken[i].show();
    }
@@ -30,35 +31,36 @@ public void draw()
       count+=10;
     }
    }
- for(int i=0;i<ben.size();i++){
+    for(int i=0;i<gren.size();i++){
      for(int j=0; j<aen.size();j++){
-       if (dist((float)(aen.get(j).getX()),(float)(aen.get(j).getY()),(float)(ben.get(i).getCenterX()),(float)(ben.get(i).getCenterY())) < 30)
+       if (dist((float)(aen.get(j).getX()),(float)(aen.get(j).getY()),(float)(gren.get(i).getCenterX()),(float)(gren.get(i).getCenterY())) < 30)
        {
-     ben.remove(i);
+     gren.remove(i);
      aen.remove(j); 
      aen.add(new Asteroid());
      break;
      }
      }
  }
- for(int i=0;i<ben.size();i++){
-  ben.get(i).move();
-  ben.get(i).show();
+ for(int i=0;i<gren.size();i++){
+  gren.get(i).move();
+  gren.get(i).show();
  }
-}
 }
 public void keyPressed(){
   if (key=='w')
-  gren.accelerate(2);
+  ben.accelerate(2);
   if(key=='a')
-  gren.turn(-30);
+  ben.turn(-30);
   if(key=='s')
-  gren.accelerate(-2);
+  ben.accelerate(-2);
   if(key=='d')
-  gren.turn(30);
+  ben.turn(30);
   if(key=='h')
-  gren.hyperSpace();
-   if(key==' ')
-  ben.add(new Bullet(sen));
+  ben.hyperSpace();
+  if(key==' ')
+  gren.add(new Bullet(ben));
+
 }
+
 
