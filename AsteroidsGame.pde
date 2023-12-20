@@ -1,7 +1,7 @@
 Spaceship ben = new Spaceship();
 Star[] ken= new Star[300];
 ArrayList<Asteroid> aen = new ArrayList <Asteroid>();
-ArrayList<Bullet> gren=new ArrayList <Bullet>();
+ArrayList <Bullet> gren=new ArrayList <Bullet>();
 
 int count = 0;
 public void setup() 
